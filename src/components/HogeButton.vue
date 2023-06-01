@@ -16,7 +16,13 @@ export default {
 
 <style scoped lang="scss">
 .hogeButton {
-  & ::v-deep svg path,
+  // & ::v-deep svg path,
+  // i {
+  //   fill: #fff;
+  // }
+
+  // 上記と等価
+  & :deep(svg path),
   i {
     fill: #fff;
   }
