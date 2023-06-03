@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <hoge-button />
+    <div class="container">
+      <hoge-button :is-svg="isSvg" class="hoge-button" />
+      <button class="switch-button" @click="onClickChange">switch</button>
+    </div>
   </div>
 </template>
 
@@ -12,6 +15,16 @@ export default {
   components: {
     HogeButton,
   },
+  data() {
+    return {
+      isSvg: true,
+    };
+  },
+  methods: {
+    onClickChange() {
+      this.isSvg = !this.isSvg;
+    },
+  },
 };
 </script>
 
@@ -20,8 +33,20 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+</style>
+
+<style scoped lanq="scss">
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hoge-button {
+  margin-bottom: 1rem;
+}
+
+/* .switch-button {
+} */
 </style>
